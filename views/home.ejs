@@ -1,15 +1,34 @@
 <%- include("partials/header") %>
+<nav id = "mainNavBar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+	<a href="#" class="navbar-brand">KATHRYN / XING</a>
+	<button class="navbar-toggler" data-toggle="collapse" data-target="navLinks">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class = "collapse navbar-collapse" id="navLinks">
+	  <ul class="navbar-nav">
+		<li class="nav-item">
+		  <a href="" class="nav-link"> ABOUT</a>
+		</li>
+		<li class="nav-item">
+		  <a href="" class="nav-link"> PROJECTS</a>
+		</li>
+		<li class="nav-item">
+		  <a href="" class="nav-link"> CONTACT</a>
+		</li>
+	  </ul>
+	</div>
+  </nav>
+  <section class="container-fluid mt-5 px-0">
+	<div class="row align-items-center">
+	  <div class="col-lg-6 text-center px-5">
+		<h1>Hi! </h1>
+		<p>My name is Kathryn, I study Computer Science <span>and finance</span> at the University of Waterloo. I love building things. </p>
+	  </div>
+	  <div class="col-lg-6">
+		<img class="img-fluid" src="public/imgs/profile_pic19 copy.png" >
+	  </div>
+	</div>
+  </section> 
 
-<div id="container">
-	<h1>To-Do List <i class="fa fa-plus"></i></h1>
-	<input type="text" placeholder="Add New Todo">
-
-	<ul>
-		<li><span><i class="fa fa-trash"></i></span> mama i love you</li>
-		<li><span><i class="fa fa-trash"></i></span> baba i love you</li>
-		<li><span><i class="fa fa-trash"></i></span> xing ke xin zhen bang</li>
-	</ul>
-</div>
-
-<script type="text/javascript" src="/public/js/todos.js"></script>
+<!--<script type="text/javascript" src="/public/js/todos.js"></script>-->
 <%- include("partials/footer") %>
