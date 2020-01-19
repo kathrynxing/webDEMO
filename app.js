@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-app.use(express.static("public"));
+app.use(express.static("assets"));
 app.set("view engine", "ejs"); //to eliminate writnig .ejs every time
 //routes
 app.get("/",function(req,res){
