@@ -1,11 +1,29 @@
 var express = require("express");
 var app = express();
-var bodyParser = require("body-parser");
+var bodyParser = require("body-parser"),
+    mongoose = require("mongoose"),
+    passport = require("passport"),
+    cookieParser = require("cookie-parser"),
+    LocalStrategy = require("passport-local");
+    //flash        = require("connect-flash"),
+    //Campground  = require("./models/campground"),
+    //Comment     = require("./models/comment"),
+    //User        = require("./models/user"),
+    //session = require("express-session"),
+    //seedDB      = require("./seeds"),
+    //methodOverride = require("method-override");
 
+//requiring routes
+//var commentRoutes    = require("./routes/comments"),
+  //  studyspaceRoutes = require("./routes/studyspaces"),
+    //indexRoutes      = require("./routes/index");
 app.use(bodyParser.urlencoded({extended: true}));
-
+mongoose.connect("mongodb://localhost/wheretostudy_db");
 app.use(express.static("assets"));//when reference allways go to /assets/...
 app.set("view engine", "ejs"); //to eliminate writnig .ejs every time
+//app.use(methodOverride('_method'));
+app.use(cookieParser('secret'));
+
 //routes
 app.get("/",function(req,res){
     res.render("home");// home.ejs
@@ -19,26 +37,37 @@ var studySpaces = [
     {name: "SLC", image: "/imgs/pattern1.jpeg" },
     {name: "St. Paul", image: "/imgs/pattern2.jpeg"}
 ]
-
+var studyspaceSchema= new mongoose.Schema({
+    name:String,
+    image: String
+});
+var Studyspace = mongoose.model("Studyspace", studyspaceSchema);
 app.get("/WhereToStudyDEMO",function(req,res){
     res.render("WTSlanding");
 
 });
 app.get("/WhereToStudyDEMO/studyspaces",function(req,res){
-    res.render("WTSstudyspaces/WTSstudyspaces", {Spaces:studySpaces});
+    Studyspace.find({},function(err,allStudyspaces){
+        if(err){console.log(err);}else{res.render("WTSstudyspaces/WTSstudyspaces", {Spaces:allStudyspaces});}
+    });
+    
 });
 app.post("/WhereToStudyDEMO/studyspaces",function(req,res){
    // res.send("this is spaces to be filled");
     var name = req.body.name;
     var img = req.body.image;
     var newSpace = {name:name, image:img};
-    studySpaces.push(newSpace);
-    res.redirect("/WhereToStudyDEMO/studyspaces");
+    Studyspace.create(newSpace,function(err, newlyCreated){
+        if(err){console.log(err);}else{res.redirect("/WhereToStudyDEMO/studyspaces");}
+    });
+
 });
 
 app.get("/WhereToStudyDEMO/studyspaces/new",function(req,res){
     res.render("WTSstudyspaces/new");
 });
+
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
     console.log("Server Has Started!");
