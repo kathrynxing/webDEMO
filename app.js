@@ -21,11 +21,11 @@ var studySpaces = [
 ]
 
 app.get("/WhereToStudyDEMO",function(req,res){
-    res.render("WhereToStudylanding", {Spaces:studySpaces});
+    res.render("WTSlanding");
 
 });
 app.get("/WhereToStudyDEMO/studyspaces",function(req,res){
-    res.render("WhereToStudylanding", {Spaces:studySpaces});
+    res.render("WTSstudyspaces", {Spaces:studySpaces});
 });
 app.post("/WhereToStudyDEMO/studyspaces",function(req,res){
    // res.send("this is spaces to be filled");

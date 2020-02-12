@@ -1,0 +1,21 @@
+<%- include("partials/header") %>
+<header class="jumbotron">
+    <a >This is a Demo of WhereToStudy</a>
+    <h1>Find peer-reviewed study spaces near you</h1>
+    <a class="btn btn-primary" href="/WhereToStudyDEMO/studyspaces/new"> Add new space</a>
+</header>
+
+<div class="row" style="display:flex; flex-wrap: wrap;">
+    <%  Spaces.forEach(function(Spaces){ %>
+            <div class="col-md-3 col-sm-6">                
+                <div class="img-thumbnail">
+                    <img src="<%=Spaces.image %>" class="img-fluid">
+                    <div class="caption">
+                        <h4><%= Spaces.name %></h4>
+                    </div>
+                </div>
+            </div>
+    <% });%>
+</div>
+
+<%- include("partials/footer") %>
