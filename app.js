@@ -18,7 +18,14 @@ var bodyParser = require("body-parser"),
   //  studyspaceRoutes = require("./routes/studyspaces"),
     //indexRoutes      = require("./routes/index");
 app.use(bodyParser.urlencoded({extended: true}));
-mongoose.connect("mongodb://localhost/wheretostudy_db");
+mongoose.connect("mongodb://localhost/wheretostudy_db",{
+    server: {
+      socketOptions: {
+        socketTimeoutMS: 0,
+        connectionTimeout: 0
+      }
+    }
+  });
 app.use(express.static("assets"));//when reference allways go to /assets/...
 app.set("view engine", "ejs"); //to eliminate writnig .ejs every time
 //app.use(methodOverride('_method'));
