@@ -25,7 +25,7 @@ app.get("/WhereToStudyDEMO",function(req,res){
 
 });
 app.get("/WhereToStudyDEMO/studyspaces",function(req,res){
-    res.render("WTSstudyspaces", {Spaces:studySpaces});
+    res.render("WTSstudyspaces/WTSstudyspaces", {Spaces:studySpaces});
 });
 app.post("/WhereToStudyDEMO/studyspaces",function(req,res){
    // res.send("this is spaces to be filled");
@@ -37,7 +37,7 @@ app.post("/WhereToStudyDEMO/studyspaces",function(req,res){
 });
 
 app.get("/WhereToStudyDEMO/studyspaces/new",function(req,res){
-    res.render("new");
+    res.render("WTSstudyspaces/new");
 });
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
