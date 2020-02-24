@@ -28,21 +28,8 @@ app.use(bodyParser.urlencoded({extended: true}));
       }
     }
   });*/
-  const db = process.env.MONGODB_URL;
-
-  const connectDB = async () => {
-    try {
-      await mongoose.connect(db, {
-        useUnifiedTopology: true,
-        useNewUrlParser: true
-      });
-      console.log("MongoDB is Connected...");
-    } catch (err) {
-      console.error(err.message);
-      process.exit(1);
-    }
-  };
-//mongoose.connect("mongodb+srv://webAppDemoUsr:Kathryn1998@cluster0-3d681.mongodb.net/test?retryWrites=true&w=majority");
+ 
+mongoose.connect("mongodb+srv://webAppDemoUsr:Kathryn1998@cluster0-3d681.mongodb.net/test?retryWrites=true&w=majority");
 app.use(express.static("assets"));//when reference allways go to /assets/...
 app.set("view engine", "ejs"); //to eliminate writnig .ejs every time
 //app.use(methodOverride('_method'));
