@@ -17,15 +17,19 @@ var bodyParser = require("body-parser"),
 //var commentRoutes    = require("./routes/comments"),
   //  studyspaceRoutes = require("./routes/studyspaces"),
     //indexRoutes      = require("./routes/index");
+
+//MongoDB Atlas webAppDemoUsr Kathryn1998
 app.use(bodyParser.urlencoded({extended: true}));
-mongoose.connect("mongodb://localhost/wheretostudy_db",{
+/*mongoose.connect("mongodb://localhost/wheretostudy_db",{
     server: {
       socketOptions: {
         socketTimeoutMS: 0,
         connectionTimeout: 0
       }
     }
-  });
+  });*/
+
+mongoose.connect("mongodb+srv://webAppDemoUsr:Kathryn1998@cluster0-3d681.mongodb.net/test?retryWrites=true&w=majority");
 app.use(express.static("assets"));//when reference allways go to /assets/...
 app.set("view engine", "ejs"); //to eliminate writnig .ejs every time
 //app.use(methodOverride('_method'));
