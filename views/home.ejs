@@ -41,39 +41,33 @@
 		 <div class="row pt-5 px-4">
 			 <div class="col-lg-4 mb-4">
 				 <div class="card">
-					 <img class="card-img-top" src="/imgs/pattern1.jpeg" alt="">
+					 <img class="card-img-top" src="/imgs/pwShow1.png" alt="">
 					 <div class="card-body">
-						 <h5 class="card-title">First Thing</h5>
-						 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-							 Veniam, dolorum facere?
-							 Commodi, ut. Et, itaque quam!</p>
-						 <a href="" class="btn btn-outline-success btn-sm">Download</a>
+						 <h5 class="card-title">Personal website</h5>
+						 <p class="card-text">NodeJS, Express, CSS, Bootstrap on Heroku</p>
+						
 						 <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
 					 </div>
 				 </div>
 			 </div>
 			 <div class="col-lg-4 mb-4">
 				 <div class="card">
-					 <img class="card-img-top" src="/imgs/pattern2.jpeg" alt="">
+					 <img class="card-img-top" src="/imgs/wtsShow2.png" alt="">
 					 <div class="card-body">
-						 <h5 class="card-title">First Thing</h5>
-						 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-							 Veniam, dolorum facere?
-							 Commodi, ut. Et, itaque quam!</p>
-						 <a href="" class="btn btn-outline-success btn-sm">Download</a>
+						 <h5 class="card-title">WhereToStudy</h5>
+						 <p class="card-text">MongoDB Atlas, RESTful routing</p>
+						 <a href="/WhereToStudyDEMO" class="btn btn-outline-success btn-sm">Here</a>
 						 <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
 					 </div>
 				 </div>
 			 </div>
 			 <div class="col-lg-4 mb-4">
 				 <div class="card">
-					 <img class="card-img-top" src="/imgs/pattern3.jpeg" alt="">
+					 <img class="card-img-top" src="/imgs/chess.jpeg" alt="">
 					 <div class="card-body">
-						 <h5 class="card-title">First Thing</h5>
-						 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-							 Veniam, dolorum facere?
-							 Commodi, ut. Et, itaque quam!</p>
-						 <a href="" class="btn btn-outline-success btn-sm">Download</a>
+						 <h5 class="card-title">OOP Chess project</h5>
+						 <p class="card-text">Team project: C++, make</p>
+						 <a href="https://github.com/kathrynxing/TUNAChess" class="btn btn-outline-success btn-sm">Here</a>
 						 <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
 					 </div>
 				 </div>
@@ -83,4 +77,12 @@
  </section>
 
 <!--<script type="text/javascript" src="/assets/js/todos.js"></script>-->
+<script>
+	$(function(){
+		$(document).scroll(function(){
+			var $nav = $("#mainNavBar");
+			$nav.toggleClass("scrolled", $(this).scrollTop()>$nav.height());
+		})
+	})
+</script>
 <%- include("partials/footer") %>

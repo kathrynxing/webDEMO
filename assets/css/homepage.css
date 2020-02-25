@@ -17,3 +17,7 @@ body {
 #mainNavBar .nav-link:hover{
     color: #6e0e0a;
 }
+
+.navbar.scrolled {
+    background: #91917a;
+}
