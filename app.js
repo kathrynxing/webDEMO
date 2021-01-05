@@ -42,6 +42,9 @@ app.get("/",function(req,res){
 app.get("/clearbancHireMe",function(req,res){
     res.render("clearbanc");//clearbanc.ejs
 });
+app.get("/.well-known/acme-challenge/ZtzN2DPzU5dtUmTSo_v9p_Rz2wfPRqPJ2tg5CmPjPF0",function(req, res){
+    res.render("challenge");
+});
 
 /** WhereToStudy DEMO */
 var studySpaces = [
