@@ -45,6 +45,9 @@ app.get("/clearbancHireMe",function(req,res){
 app.get("/.well-known/acme-challenge/ZtzN2DPzU5dtUmTSo_v9p_Rz2wfPRqPJ2tg5CmPjPF0",function(req, res){
     res.render("challenge");
 });
+app.get("/.well-known/acme-challenge/isJ5U5lQlMGtxUJvHM-hM-L9Ih4Wm8AiYvRPFpUF3Qg",function(req, res){
+    res.render("challenge2");
+});
 
 /** WhereToStudy DEMO */
 var studySpaces = [
