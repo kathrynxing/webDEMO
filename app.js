@@ -1,4 +1,5 @@
-var express = require("express");
+var express = require("express"),
+    fs = require("fs");
 var app = express();
 var bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
@@ -47,6 +48,15 @@ app.get("/.well-known/acme-challenge/ZtzN2DPzU5dtUmTSo_v9p_Rz2wfPRqPJ2tg5CmPjPF0
 });
 app.get("/.well-known/acme-challenge/isJ5U5lQlMGtxUJvHM-hM-L9Ih4Wm8AiYvRPFpUF3Qg",function(req, res){
     res.render("challenge2");
+});
+
+app.get('/resume', function (req, res) {
+    var filePath = "/views/kathrynxing_resume21a.pdf";
+
+    fs.readFile(__dirname + filePath , function (err,data){
+        res.contentType("application/pdf");
+        res.send(data);
+    });
 });
 
 /** WhereToStudy DEMO */
