@@ -51,7 +51,7 @@ app.get("/.well-known/acme-challenge/isJ5U5lQlMGtxUJvHM-hM-L9Ih4Wm8AiYvRPFpUF3Qg
 });
 
 app.get('/resume', function (req, res) {
-    var filePath = "/views/kathrynxing_resume21a.pdf";
+    var filePath = "/views/kathrynxing_resume_v2.5.pdf";
 
     fs.readFile(__dirname + filePath , function (err,data){
         res.contentType("application/pdf");
